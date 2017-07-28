@@ -1,0 +1,22 @@
+body {
+  text-align: center;
+  font-family: sans-serif
+}
+
+#controls button{
+  font-size: 20px;
+  border: none;
+  background-color: transparent;
+  border-bottom: 1px solid grey;
+  margin: 5px;
+  outline: none
+  
+}
+
+#controls button:hover {
+  font-weight: bold;
+  cursor: pointer;
+  color: #000eee;
+  border-top: 1px solid grey;
+  border-bottom: none;
+}
