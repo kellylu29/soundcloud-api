@@ -30,9 +30,9 @@ SC.get('/users/27897433/tracks').then(function(response){
   title.href = tracks[currentTrack].permalink_url
 
 
-  description.innerHTML = "Description:<br> " + tracks[currentTrack].description
-  genre.innerHTML = "Genre: " + tracks[currentTrack].genre
-  date.innerHTML = "Year: " + tracks[currentTrack].release_year
+  description.innerHTML = "<em>Description</em>:<br>" + tracks[currentTrack].description
+  genre.innerHTML = "<em>Genre</em>: " + tracks[currentTrack].genre
+  date.innerHTML = "<em>Year</em>: " + tracks[currentTrack].release_year
   artImg.src = tracks[currentTrack].artwork_url
 
 
