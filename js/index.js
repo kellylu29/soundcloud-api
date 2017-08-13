@@ -5,7 +5,6 @@ function id(str){
 
 var playBtn = id('play')
 var pauseBtn = id('pause')
-var nextBtn = id('next')
 var artist = id('artist')
 var songTitle = id('title')
 var description = id('description')
@@ -45,35 +44,20 @@ SC.get('/users/27897433/tracks').then(function(response){
 function playSong(){
   SC.stream('/users/8362534/tracks/' + tracks[currentTrack].id).then(function(player){
 
-    playBtn.addEventListener('click', function(){
     player.play()
+
+    playBtn.addEventListener('click', function(){
+      player.play()
     })
 
     pauseBtn.addEventListener('click', function(){
-    player.pause()
+      player.pause()
     })
 
-    nextBtn.addEventListener('click', function(){
-    currentTrack++
-
-    player.play()
-    })
-
-  })
-}
-
-
-function playNext() {
-  SC.stream( '/tracks/' + songs[currentTrack].id ).then(function(player){
-    player.play()
     player.on("finish",function(){
-    currentTrack += 1
-    playNext()
+      player.play()
+      currentTrack += 1
+      playSong()
     })
   })
 }
-
-  // player.on("finish",function(){
-  //   currentSong ++;
-  //   playNext();
-  //   })

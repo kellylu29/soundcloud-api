@@ -1,14 +1,15 @@
 body {
   text-align: center;
-  font-family: sans-serif;
+  font-family: 'Bubbler One', sans-serif;
   background-color: black;
   color: white;
   width: 100%;
+  letter-spacing: 2px;
 }
 
 .container {
-  width: 80%;
-  margin: 100px auto 20px auto;
+  width: 70%;
+  margin: 70px auto 20px auto;
 }
 
 #artImg {
@@ -20,39 +21,48 @@ body {
 .art {
   display: inline-block;
   float: left;
-  width: 20%;
+  text-align: right;
+  width: 25%;
 }
 
 .results {
+  text-align: left;
   display: inline-block;
-  width: 60%;
+  width: 70%;
+  float: right;
   line-height: 140%;
 }
 
 .results a {
-  font-size: 1.5em;
+  font-size: 1.75em;
   color: #FFADA2;
   text-decoration: none;
-  line-height: 120%;
+}
+
+.results .title {
+  font-size: 1.25em;
+  line-height: 140%;
 }
 
 .results a:hover {
   font-weight: bold;
   cursor: pointer;
   color: white;
-  border-top: 1px solid grey;
-  border-bottom: none;
+  letter-spacing: 2px;
 }
 
 .controls {
+  display: block;
+  clear: both;
   width: 100%;
-  margin-top: 40px;
+  padding-top: 50px;
 }
 
 .controls button{
+  font-family: 'Shrikhand', cursive;
   width: 200px;
   height: 80px;
-  font-size: 20px;
+  font-size: 2em;
   border: 1px solid white;
   color: white;
   background-color: transparent;
