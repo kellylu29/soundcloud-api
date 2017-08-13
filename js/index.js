@@ -16,14 +16,13 @@ var artImg = id('artImg')
 var tracks = []
 var currentTrack = 0
 
-
 SC.initialize({
   client_id: 'fd4e76fc67798bfa742089ed619084a6'
 })
 
-SC.get('/users/57031159/tracks').then(function(response){
+SC.get('/users/27897433/tracks').then(function(response){
 
-  tracks = response 
+  tracks = response
 
   artist.innerHTML = tracks[currentTrack].user.username
   artist.href = tracks[currentTrack].user.permalink_url
@@ -31,21 +30,21 @@ SC.get('/users/57031159/tracks').then(function(response){
   title.href = tracks[currentTrack].permalink_url
 
 
-  description.innerHTML = tracks[currentTrack].description +"description"
-  genre.innerHTML = tracks[currentTrack].genre + "genre"
-  date.innerHTML = tracks[currentTrack].release_year +"year"
+  description.innerHTML = "Description:<br> " + tracks[currentTrack].description
+  genre.innerHTML = "Genre: " + tracks[currentTrack].genre
+  date.innerHTML = "Year: " + tracks[currentTrack].release_year
   artImg.src = tracks[currentTrack].artwork_url
 
 
-}).then(function(){
+  }).then(function(){
 
   playSong()
 
 })
-  
+
 function playSong(){
   SC.stream('/users/8362534/tracks/' + tracks[currentTrack].id).then(function(player){
-    
+
     playBtn.addEventListener('click', function(){
     player.play()
     })
@@ -56,7 +55,7 @@ function playSong(){
 
     nextBtn.addEventListener('click', function(){
     currentTrack++
-    
+
     player.play()
     })
 
@@ -64,21 +63,17 @@ function playSong(){
 }
 
 
-function playNext() {  
+function playNext() {
   SC.stream( '/tracks/' + songs[currentTrack].id ).then(function(player){
     player.play()
-    player.on("finish",function(){      
+    player.on("finish",function(){
     currentTrack += 1
-    playNext()     
+    playNext()
     })
   })
 }
-  
-  // player.on("finish",function(){      
-  //   currentSong ++;       
-  //   playNext(); 
+
+  // player.on("finish",function(){
+  //   currentSong ++;
+  //   playNext();
   //   })
-
-
-  
-  

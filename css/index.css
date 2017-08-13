@@ -1,22 +1,52 @@
 body {
   text-align: center;
-  font-family: sans-serif
+  font-family: sans-serif;
+  background-color: black;
+  color: white;
+  width: 100%;
 }
 
-#controls button{
+.container {
+  width: 80%;
+  margin: 100px auto 20px auto;
+}
+
+#artImg {
+  width: 150px;
+  height: 150px
+}
+
+.art {
+  display: inline-block;
+  float: left;
+  width: 30%;
+}
+
+.results {
+  display: inline-block;
+  width: 60%;
+  padding-right: 20px;
+}
+
+.controls {
+  width: 100%;
+  margin-top: 100px;
+}
+
+.controls button{
   font-size: 20px;
   border: none;
+  color: white;
   background-color: transparent;
-  border-bottom: 1px solid grey;
   margin: 5px;
   outline: none
-  
+
 }
 
-#controls button:hover {
+.controls button:hover {
   font-weight: bold;
   cursor: pointer;
-  color: #000eee;
+  color: white;
   border-top: 1px solid grey;
   border-bottom: none;
 }

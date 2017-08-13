@@ -3,34 +3,35 @@
 <head>
 	<title>Jukebox with SoundCloud API</title>
 	<link rel="stylesheet" type="text/css" href="css/index.css">
-	
+
 </head>
 <body>
 
-	<div>
-	  
-  <div>
-    
-    <img id="artImg" src="#" >
-    <div id="results">
+	<div class="container">
 
-    	<a href="#" id="artist">Artist</a><br>
-      <a href="#" id="title">Title</a>
-      <p id="description"></p>
-      <p id="genre"></p>
-      <p id="date"></p>
+	  <div class="player">
 
-    </div>  
+			<div class="art">
+				<img id="artImg" src="#" >
+			</div>
 
-    <div id="controls">  
-      <button id="play">Play</button>
-      <button id="pause">Pause</button> 
-      <button id="next">Next</button> 
-    </div>  
+	    <div class="results">
+	    	<a href="#" id="artist">Artist</a><br>
+	      <a href="#" id="title">Title</a>
+	      <p id="description"></p>
+	      <span id="genre"></span> /
+	      <span id="date"></span>
+	    </div>
 
-  </div>
-	 
-</div>
+	    <div class="controls">
+	      <button id="play">Play</button>
+	      <button id="pause">Pause</button>
+	      <button id="next">Next</button>
+	    </div>
+
+		</div>
+
+	</div>
 <script type="text/javascript" src="https://connect.soundcloud.com/sdk/sdk-3.1.2.js"></script>
 <script type="text/javascript" src="js/index.js"></script>
 </body>
