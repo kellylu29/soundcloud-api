@@ -19,10 +19,8 @@ SC.initialize({
   client_id: 'fd4e76fc67798bfa742089ed619084a6'
 })
 
-
 function getSong(){
   SC.get('/users/27897433/tracks').then(function(response){
-
     tracks = response
 
     artist.innerHTML = tracks[currentTrack].user.username
@@ -30,16 +28,13 @@ function getSong(){
     title.innerHTML = tracks[currentTrack].title
     title.href = tracks[currentTrack].permalink_url
 
-
     description.innerHTML = "<em>Description</em>:<br>" + tracks[currentTrack].description
     genre.innerHTML = "<em>Genre</em>: " + tracks[currentTrack].genre
     date.innerHTML = "<em>Year</em>: " + tracks[currentTrack].release_year
     artImg.src = tracks[currentTrack].artwork_url
 
-    }).then(function(){
-
+  }).then(function(){
     playSong()
-
   })
 }
 
@@ -65,5 +60,6 @@ function playSong(){
         window.location.reload()
       }
     })
+
   })
 }
