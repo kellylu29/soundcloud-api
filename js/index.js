@@ -61,5 +61,13 @@ function playSong(){
       }
     })
 
+    player.on("finish", function(){
+      currentTrack += 1
+      getSong()
+      if(tracks.length < currentTrack){
+        window.location.reload()
+      }
+    })
+
   })
 }
