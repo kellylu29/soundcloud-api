@@ -1,10 +1,10 @@
-//function to return getElementById
 function id(str){
   return document.getElementById(str)
 }
 
 var playBtn = id('play')
 var pauseBtn = id('pause')
+var nextBtn = id('next')
 var artist = id('artist')
 var songTitle = id('title')
 var description = id('description')
@@ -19,30 +19,34 @@ SC.initialize({
   client_id: 'fd4e76fc67798bfa742089ed619084a6'
 })
 
-SC.get('/users/27897433/tracks').then(function(response){
 
-  tracks = response
+function getSong(){
+  SC.get('/users/27897433/tracks').then(function(response){
 
-  artist.innerHTML = tracks[currentTrack].user.username
-  artist.href = tracks[currentTrack].user.permalink_url
-  title.innerHTML = tracks[currentTrack].title
-  title.href = tracks[currentTrack].permalink_url
+    tracks = response
 
-
-  description.innerHTML = "<em>Description</em>:<br>" + tracks[currentTrack].description
-  genre.innerHTML = "<em>Genre</em>: " + tracks[currentTrack].genre
-  date.innerHTML = "<em>Year</em>: " + tracks[currentTrack].release_year
-  artImg.src = tracks[currentTrack].artwork_url
+    artist.innerHTML = tracks[currentTrack].user.username
+    artist.href = tracks[currentTrack].user.permalink_url
+    title.innerHTML = tracks[currentTrack].title
+    title.href = tracks[currentTrack].permalink_url
 
 
-  }).then(function(){
+    description.innerHTML = "<em>Description</em>:<br>" + tracks[currentTrack].description
+    genre.innerHTML = "<em>Genre</em>: " + tracks[currentTrack].genre
+    date.innerHTML = "<em>Year</em>: " + tracks[currentTrack].release_year
+    artImg.src = tracks[currentTrack].artwork_url
 
-  playSong()
+    }).then(function(){
 
-})
+    playSong()
+
+  })
+}
+
+getSong()
 
 function playSong(){
-  SC.stream('/users/8362534/tracks/' + tracks[currentTrack].id).then(function(player){
+  SC.stream('/users/27897433/tracks/' + tracks[currentTrack].id).then(function(player){
 
     player.play()
 
@@ -54,10 +58,12 @@ function playSong(){
       player.pause()
     })
 
-    player.on("finish",function(){
-      player.play()
+    nextBtn.addEventListener('click', function(){
       currentTrack += 1
-      playSong()
+      getSong()
+      if(tracks.length < currentTrack){
+        window.location.reload()
+      }
     })
   })
 }

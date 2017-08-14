@@ -9,17 +9,19 @@ body {
 
 .container {
   width: 70%;
-  margin: 70px auto 20px auto;
+  margin: 30px auto 20px auto;
 }
 
 #artImg {
-  padding-top: 15px;
-  width: 150px;
-  height: 150px
+  padding: 10px;
+  width: 125px;
+  height: 125px;
+  border: 1px solid white;
 }
 
 .art {
   display: inline-block;
+  padding-top: 15px;
   float: left;
   text-align: right;
   width: 25%;
@@ -41,7 +43,7 @@ body {
 
 .results .title {
   font-size: 1.25em;
-  line-height: 140%;
+  line-height: 150%;
 }
 
 .results a:hover {
@@ -55,7 +57,7 @@ body {
   display: block;
   clear: both;
   width: 100%;
-  padding-top: 50px;
+  padding-top: 10px;
 }
 
 .controls button{
@@ -78,5 +80,4 @@ body {
   background-color: transparent;
   letter-spacing: 12px;
   border: 1px solid #FFADA2;
-  /*box-shadow: 10px 5px 50px 0px rgba(255,242,241,0.6);*/
 }
