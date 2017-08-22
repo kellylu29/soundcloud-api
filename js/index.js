@@ -1,3 +1,7 @@
+window.onload = function(){
+  getSong()
+}
+
 function id(str){
   return document.getElementById(str)
 }
@@ -37,8 +41,6 @@ function getSong(){
     playSong()
   })
 }
-
-getSong()
 
 function playSong(){
   SC.stream('/users/27897433/tracks/' + tracks[currentTrack].id).then(function(player){
